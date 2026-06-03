@@ -2,7 +2,6 @@
 ## Тесты на добавление книг
 * test_add_new_book_add_two_books_added - проверка добавления двух книг
 * test_add_new_book_add_one_book_added - проверка добавления одной книги   
-* test_add_new_book_add_book_added - проверка того, что книга добавлена
 * test_add_new_book_add_book_not_added_name_more_41 - проверка невозможности добавления книги с названием больше 41 знака
 * test_add_new_book_add_book_has_no_genre - проверка отсутствия жанра при добавлении книги
 ## Тесты на добавление жанра

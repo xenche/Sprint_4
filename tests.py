@@ -13,11 +13,6 @@ class TestBooksCollector:
     def test_add_new_book_add_one_book_added(self):
         collector = BooksCollector()
         collector.add_new_book('Задача трех тел')
-        assert len(collector.books_genre) == 1
-
-    def test_add_new_book_add_book_added(self):
-        collector = BooksCollector()
-        collector.add_new_book('Задача трех тел')
         assert 'Задача трех тел' in collector.books_genre.keys()
 
     def test_add_new_book_add_book_not_added_name_more_41(self):
@@ -78,14 +73,12 @@ class TestBooksCollector:
     def test_add_book_in_favorites_for_book_not_in_fav_added(self):
         collector = BooksCollector()
         collector.add_new_book('Испытание зверя')
-        collector.set_book_genre('Испытание зверя', 'Детективы')
         collector.add_book_in_favorites('Испытание зверя') 
         assert collector.favorites == ['Испытание зверя']
 
     def test_add_book_in_favorites_for_book_in_fav_not_added(self):
         collector = BooksCollector()
         collector.add_new_book('Испытание зверя')
-        collector.set_book_genre('Испытание зверя', 'Детектив')
         collector.add_book_in_favorites('Испытание зверя')
         collector.add_book_in_favorites('Испытание зверя') 
         assert collector.favorites == ['Испытание зверя']
@@ -93,7 +86,6 @@ class TestBooksCollector:
     def test_delete_book_from_favorites_one_book_deleted(self):
         collector = BooksCollector()
         collector.add_new_book('Испытание зверя')
-        collector.set_book_genre('Испытание зверя', 'Детективы')
         collector.add_book_in_favorites('Испытание зверя')
         collector.delete_book_from_favorites('Испытание зверя')
         assert collector.favorites == []
@@ -101,6 +93,5 @@ class TestBooksCollector:
     def test_get_list_of_favorites_books_one_book(self):
         collector = BooksCollector()
         collector.add_new_book('Испытание зверя')
-        collector.set_book_genre('Испытание зверя', 'Детективы')
         collector.add_book_in_favorites('Испытание зверя')
         assert collector.get_list_of_favorites_books() == ['Испытание зверя']
